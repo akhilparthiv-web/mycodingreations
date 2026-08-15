@@ -42,9 +42,7 @@ kata_groups = {
 texts = {
     "en": {
         "title": "SHOTOKAN KATA MEMORY TRAINER",
-        "choose_group": "Choose a Kata Group to practice:",
-        "groups": ["1. Heian", "2. Tekki", "3. Sentei", "4. Advanced", "5. All Katas"],
-        "prompt_menu": "Enter a number (1-5): ",
+        "menu_prompt": "\nChoose a Kata Group to practice:\n1. Heian\n2. Tekki\n3. Sentei\n4. Advanced\n5. All Katas\nEnter a number (1-5): ",
         "invalid_menu": "Invalid choice, please enter a number from 1 to 5.",
         "loading": "Loading",
         "q_1st": "1st kiai",
@@ -66,9 +64,7 @@ texts = {
     },
     "fr": {
         "title": "ENTRAÎNEUR DE MÉMOIRE KATA SHOTOKAN",
-        "choose_group": "Choisissez un groupe de Kata à pratiquer :",
-        "groups": ["1. Heian", "2. Tekki", "3. Sentei", "4. Avancé", "5. Tous les Katas"],
-        "prompt_menu": "Entrez un numéro (1-5) : ",
+        "menu_prompt": "\nChoisissez un groupe de Kata à pratiquer :\n1. Heian\n2. Tekki\n3. Sentei\n4. Avancé\n5. Tous les Katas\nEntrez un numéro (1-5) : ",
         "invalid_menu": "Choix invalide, veuillez entrer un nombre de 1 à 5.",
         "loading": "Chargement",
         "q_1st": "1er kiai",
@@ -90,7 +86,7 @@ texts = {
     }
 }
 
-# 1. Ask for Language
+# 1. Options built directly into the language selection input prompt
 while True:
     lang_choice = input("Select Language / Choisissez la langue (en/fr): ").lower()
     if lang_choice in ['en', 'fr']:
@@ -104,13 +100,9 @@ print("===================================")
 print(f"   {t['title']}    ")
 print("===================================")
 
-print(f"\n{t['choose_group']}")
-for group in t['groups']:
-    print(group)
-
-# 2. Loop until the user provides a valid menu option
+# 2. Group menu options placed directly inside the menu input prompt
 while True:
-    choice = input(t['prompt_menu'])
+    choice = input(t['menu_prompt'])
     if choice in ['1', '2', '3', '4', '5']:
         break
     print(t['invalid_menu'])
